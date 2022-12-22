@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
+import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favouriteMenuButton.dart';
 import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favourites.dart';
 import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
 import 'package:simfonie/screens/mini%20screens/NowPlayingScreen/NowPlayingScreen.dart';
@@ -162,9 +163,8 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                             fontSize: 12,
                                             color: Colors.blueGrey),
                                       ),
-                                      trailing: FavoriteButton(
-                                        songFavorite: startSong[index],
-                                      ),
+                                      trailing: FavoriteMenuButton(
+                                          songFavorite: startSong[index]),
                                       onTap: () {
                                         GetAllSongController.audioPlayer
                                             .setAudioSource(

@@ -11,8 +11,6 @@ class FavoriteButton extends StatefulWidget {
   State<FavoriteButton> createState() => _FavoriteButtonState();
 }
 
-bool isFavourite = false;
-
 class _FavoriteButtonState extends State<FavoriteButton> {
   @override
   Widget build(BuildContext context) {
