@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favourites.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
-import 'package:simfonie/screens/mini%20screens/Top%20Beats/TopBeats.dart';
-import '../../MAIN SCREENS/SettingsScreen/AboutScreen.dart';
-import '../../MAIN SCREENS/SettingsScreen/SettingsScreen.dart';
+import '../../MainScreens/SettingsScreen/AboutScreen.dart';
+import '../../MainScreens/SettingsScreen/SettingsScreen.dart';
+import '../FavouriteSongsScreen/favourites.dart';
+import '../Playlist Screen/PlaylistScreen.dart';
+import '../Top Beats/TopBeats.dart';
 
-class Drawerwidget extends StatelessWidget {
-  const Drawerwidget({
+class DrawerWidget extends StatelessWidget {
+  const DrawerWidget({
     Key? key,
   }) : super(key: key);
 

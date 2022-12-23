@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Top%20Beats/TopBeats.dart';
-import 'package:simfonie/screens/mini%20screens/FavouriteSongsScreen/favourites.dart';
 
-import '../../MINI SCREENS/widgets/DrawerWidget.dart';
+import '../../MiniScreens/FavouriteSongsScreen/favourites.dart';
+import '../../MiniScreens/Playlist Screen/PlaylistScreen.dart';
+import '../../MiniScreens/Top Beats/TopBeats.dart';
+import '../../MiniScreens/widgets/DrawerWidget.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -11,7 +11,7 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: Drawerwidget(),
+        drawer: DrawerWidget(),
         appBar: AppBar(
           title: Center(
             child: Image.asset(

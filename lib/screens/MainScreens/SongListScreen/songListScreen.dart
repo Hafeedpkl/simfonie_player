@@ -8,14 +8,12 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favouriteMenuButton.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favourites.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
-import 'package:simfonie/screens/mini%20screens/NowPlayingScreen/NowPlayingScreen.dart';
 
 import '../../../provider/song_model_provider.dart';
-import '../../MINI SCREENS/FavouriteSongsScreen/favoriteButton.dart';
-import '../../MINI SCREENS/widgets/DrawerWidget.dart';
+import '../../MiniScreens/FavouriteSongsScreen/FavouriteMenuButton.dart';
+import '../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
+import '../../MiniScreens/Playlist Screen/PlaylistScreen.dart';
+import '../../MiniScreens/widgets/DrawerWidget.dart';
 
 class ListSongScreen extends StatefulWidget {
   const ListSongScreen({super.key});
@@ -50,7 +48,7 @@ class _ListSongScreenState extends State<ListSongScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: const Drawerwidget(),
+        drawer: const DrawerWidget(),
         appBar: AppBar(
           title: Center(
             child: Image.asset(

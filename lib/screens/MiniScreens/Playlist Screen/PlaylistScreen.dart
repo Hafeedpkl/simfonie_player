@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favourites.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/playlist%20Individual.dart';
+import 'package:simfonie/screens/MiniScreens/Playlist%20Screen/playlist%20Individual.dart';
+
+import '../FavouriteSongsScreen/favourites.dart';
 
 class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key});
@@ -128,7 +129,7 @@ class PlaylistScreen extends StatelessWidget {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => PlaylistSingle(
-                                            PlaylistName:
+                                            playListName:
                                                 'Playlist ${index + 1}'),
                                       ));
                                 },

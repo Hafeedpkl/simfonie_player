@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/db/favourite_db.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favourites.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
 
 class FavoriteMenuButton extends StatefulWidget {
   const FavoriteMenuButton({super.key, required this.songFavorite});
@@ -11,7 +9,7 @@ class FavoriteMenuButton extends StatefulWidget {
   State<FavoriteMenuButton> createState() => _FavoriteMenuButtonState();
 }
 
-// var changingString = null;
+
 
 class _FavoriteMenuButtonState extends State<FavoriteMenuButton> {
   @override
@@ -26,7 +24,7 @@ class _FavoriteMenuButtonState extends State<FavoriteMenuButton> {
                   FavoriteDb.isFavor(widget.songFavorite)
                       ? 'Remove from favourites'
                       : 'Add to favourite',
-                  style:const TextStyle(
+                  style: const TextStyle(
                       color: Colors.white,
                       fontFamily: 'poppins',
                       fontSize: 13)),
@@ -36,7 +34,7 @@ class _FavoriteMenuButtonState extends State<FavoriteMenuButton> {
                   const snackBar = SnackBar(
                     content: Text('Removed From Favorite'),
                     duration: Duration(seconds: 1),
-                    backgroundColor:  Color.fromARGB(255, 20, 5, 46),
+                    backgroundColor: Color.fromARGB(255, 20, 5, 46),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 } else {
@@ -44,12 +42,11 @@ class _FavoriteMenuButtonState extends State<FavoriteMenuButton> {
                   const snackBar = SnackBar(
                     content: Text('Song Added to Favorite'),
                     duration: Duration(seconds: 1),
-                    backgroundColor:  Color.fromARGB(255, 20, 5, 46),
+                    backgroundColor: Color.fromARGB(255, 20, 5, 46),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 }
                 FavoriteDb.favoriteSongs.notifyListeners();
-               
               },
             ),
             PopupMenuItem(

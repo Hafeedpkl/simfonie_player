@@ -2,10 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/fav_but_music_playing.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Playlist%20Screen/PlaylistScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../../Controllers/Get_all_song_controller.dart';
+import '../FavouriteSongsScreen/fav_but_music_playing.dart';
+import '../Playlist Screen/PlaylistScreen.dart';
 import 'widgets/ArtWorkWidget.dart';
 
 class PlayScreen extends StatefulWidget {

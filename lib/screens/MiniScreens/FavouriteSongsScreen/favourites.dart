@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/NowPlayingScreen/NowPlayingScreen.dart';
+import '../NowPlayingScreen/NowPlayingScreen.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});

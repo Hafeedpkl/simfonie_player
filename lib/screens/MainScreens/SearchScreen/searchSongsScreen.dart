@@ -3,11 +3,10 @@ import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:provider/provider.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/FavouriteSongsScreen/favoriteButton.dart';
-
 import '../../../Controllers/Get_all_song_controller.dart';
 import '../../../provider/song_model_provider.dart';
-import '../../MINI SCREENS/NowPlayingScreen/NowPlayingScreen.dart';
+import '../../MiniScreens/FavouriteSongsScreen/favoriteButton.dart';
+import '../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import '../SongListScreen/songListScreen.dart';
 
 class SearchScreen extends StatefulWidget {

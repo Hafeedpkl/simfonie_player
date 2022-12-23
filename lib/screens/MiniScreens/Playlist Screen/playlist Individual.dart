@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class PlaylistSingle extends StatelessWidget {
-  final String PlaylistName;
+  final String playListName;
 
-  const PlaylistSingle({super.key, required this.PlaylistName});
+  const PlaylistSingle({super.key, required this.playListName});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class PlaylistSingle extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        PlaylistName,
+                        playListName,
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

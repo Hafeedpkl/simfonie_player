@@ -1,11 +1,10 @@
 // ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:simfonie/screens/MAIN%20SCREENS/SettingsScreen/SettingsScreen.dart';
-import 'package:simfonie/screens/MAIN%20SCREENS/SongListScreen/songListScreen.dart';
-import 'package:simfonie/screens/MINI%20SCREENS/Top%20Beats/TopBeats.dart';
-import 'package:simfonie/screens/MAIN%20SCREENS/ExploreScreen/exploreScreen.dart';
-import 'package:simfonie/screens/MAIN%20SCREENS/SearchScreen/searchSongsScreen.dart';
+import 'package:simfonie/screens/MainScreens/SettingsScreen/SettingsScreen.dart';
+import 'package:simfonie/screens/MainScreens/SongListScreen/songListScreen.dart';
+import 'package:simfonie/screens/MainScreens/ExploreScreen/exploreScreen.dart';
+import 'package:simfonie/screens/MainScreens/SearchScreen/searchSongsScreen.dart';
 
 class ScreenHome extends StatefulWidget {
   const ScreenHome({super.key});

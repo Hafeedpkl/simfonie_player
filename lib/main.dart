@@ -4,7 +4,7 @@ import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
 import 'package:simfonie/model/simfonie_model.dart';
 import 'package:simfonie/provider/song_model_provider.dart';
-import 'package:simfonie/screens/mini%20screens/SpalshSccreen/splashScreen.dart';
+import 'package:simfonie/screens/MiniScreens/SplashSccreen/splashScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
