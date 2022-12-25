@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/screens/MiniScreens/mini%20player/miniPlayer.dart';
 
 class TopBeatsScreen extends StatelessWidget {
   const TopBeatsScreen({super.key});

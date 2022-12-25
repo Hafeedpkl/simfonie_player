@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:simfonie/db/favourite_db.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../../Controllers/Get_all_song_controller.dart';
 import '../FavouriteSongsScreen/fav_but_music_playing.dart';
@@ -85,6 +86,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         IconButton(
                           onPressed: () {
                             Navigator.pop(context);
+                            FavoriteDb.favoriteSongs.notifyListeners();
                           },
                           icon: const Icon(
                             Icons.arrow_back,
@@ -272,22 +274,46 @@ class _PlayScreenState extends State<PlayScreen> {
                             Icons.skip_previous_outlined,
                             color: Colors.white,
                           )),
-                      IconButton(
-                          iconSize: 70,
-                          onPressed: () {
-                            setState(() {
-                              if (_isplaying) {
-                                GetAllSongController.audioPlayer.play();
-                              } else {
-                                GetAllSongController.audioPlayer.pause();
-                              }
-                              _isplaying = !_isplaying;
-                            });
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Color.fromARGB(255, 20, 5, 46),
+                            shape: const CircleBorder()),
+                        onPressed: () async {
+                          if (GetAllSongController.audioPlayer.playing) {
+                            setState(() {});
+                            await GetAllSongController.audioPlayer.pause();
+                          } else {
+                            await GetAllSongController.audioPlayer.play();
+                            setState(() {});
+                          }
+                        },
+                        child: StreamBuilder<bool>(
+                          stream:
+                              GetAllSongController.audioPlayer.playingStream,
+                          builder: (context, snapshot) {
+                            bool? playingStage = snapshot.data;
+                            if (playingStage != null && playingStage) {
+                              return const Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Icon(
+                                  Icons.pause_circle,
+                                  color: Colors.purpleAccent,
+                                  size: 80,
+                                ),
+                              );
+                            } else {
+                              return const Padding(
+                                padding: EdgeInsets.all(6.0),
+                                child: Icon(
+                                  Icons.play_circle,
+                                  color: Colors.purpleAccent,
+                                  size: 80,
+                                ),
+                              );
+                            }
                           },
-                          icon: Icon(
-                            _isplaying ? Icons.play_circle : Icons.pause_circle,
-                            color: Colors.purpleAccent,
-                          )),
+                        ),
+                      ),
                       IconButton(
                           iconSize: 40,
                           onPressed: () {
@@ -313,11 +339,11 @@ class _PlayScreenState extends State<PlayScreen> {
                             });
                           },
                           icon: _isLooping
-                              ? Icon(
+                              ? const Icon(
                                   Icons.repeat,
                                   color: Colors.purpleAccent,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.repeat,
                                   color: Colors.white,
                                 )),

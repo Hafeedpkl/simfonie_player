@@ -121,7 +121,8 @@ class FavouriteScreen extends StatelessWidget {
                                                         color: Colors.blueGrey),
                                                   ),
                                                   trailing: IconButton(
-                                                    icon: Icon(Icons.favorite),
+                                                    icon: Icon(
+                                                        Icons.heart_broken),
                                                     onPressed: () {
                                                       FavoriteDb.favoriteSongs
                                                           .notifyListeners();

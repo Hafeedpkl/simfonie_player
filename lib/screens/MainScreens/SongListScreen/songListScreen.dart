@@ -157,6 +157,7 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                             : items.data![index].artist
                                                 .toString(),
                                         style: const TextStyle(
+                                            overflow: TextOverflow.ellipsis,
                                             fontFamily: 'poppins',
                                             fontSize: 12,
                                             color: Colors.blueGrey),
