@@ -7,12 +7,13 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
+import 'package:simfonie/Controllers/get_recent_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 
 import '../../../provider/song_model_provider.dart';
 import '../../MiniScreens/FavouriteSongsScreen/FavouriteMenuButton.dart';
 import '../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
-import '../../MiniScreens/Playlist Screen/PlaylistScreen.dart';
+import '../ExploreScreen/PlaylistScreen/PlaylistScreen.dart';
 import '../../MiniScreens/widgets/DrawerWidget.dart';
 
 class ListSongScreen extends StatefulWidget {
@@ -172,6 +173,9 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                                         items.data!),
                                                 initialIndex: index);
                                         // GetAllSongController.audioPlayer.play();
+                                        GetRecentSongController
+                                            .addRecentlyPlayed(
+                                                items.data![index].id);
                                         context
                                             .read<SongModelProvider>()
                                             .setId(items.data![index].id);

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/screens/MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../../Controllers/Get_all_song_controller.dart';
 
@@ -26,7 +27,14 @@ class _MiniPlayerState extends State<MiniPlayer> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  PlayScreen(songModelList: GetAllSongController.playingSong),
+            ));
+      },
       child: Align(
         alignment: Alignment.bottomCenter,
         child: Padding(
@@ -72,7 +80,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                         fontFamily: 'poppins',
                                         fontSize: 14),
                                   ),
-                            Text(
+                            TextScroll(
                               GetAllSongController
                                           .playingSong[GetAllSongController
                                               .audioPlayer.currentIndex!]
@@ -89,6 +97,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                   fontFamily: 'poppins',
                                   fontSize: 10,
                                   color: Colors.blueGrey),
+                              mode: TextScrollMode.endless,
                             ),
                           ],
                         ),

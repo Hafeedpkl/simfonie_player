@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../MainScreens/SettingsScreen/AboutScreen.dart';
 import '../../MainScreens/SettingsScreen/SettingsScreen.dart';
 import '../FavouriteSongsScreen/favourites.dart';
-import '../Playlist Screen/PlaylistScreen.dart';
+import '../../MainScreens/ExploreScreen/PlaylistScreen/PlaylistScreen.dart';
 import '../Top Beats/TopBeats.dart';
 
 class DrawerWidget extends StatelessWidget {
