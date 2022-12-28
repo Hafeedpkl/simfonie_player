@@ -4,11 +4,11 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
-import 'package:simfonie/screens/MainScreens/SettingsScreen/SettingsScreen.dart';
-import 'package:simfonie/screens/MainScreens/SongListScreen/songListScreen.dart';
-import 'package:simfonie/screens/MainScreens/ExploreScreen/exploreScreen.dart';
-import 'package:simfonie/screens/MainScreens/SearchScreen/searchSongsScreen.dart';
-import 'package:simfonie/screens/MiniScreens/mini%20player/miniPlayer.dart';
+import 'package:simfonie/screens/MainScreens/SettingsScreens/SettingsScreen.dart';
+import 'package:simfonie/screens/MainScreens/songListScreen.dart';
+import 'package:simfonie/screens/MainScreens/exploreScreen.dart';
+import 'package:simfonie/screens/MainScreens/searchSongsScreen.dart';
+import 'package:simfonie/screens/MiniScreens/miniPlayer.dart';
 
 class ScreenHome extends StatefulWidget {
   const ScreenHome({super.key});

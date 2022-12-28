@@ -5,8 +5,9 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/db/favourite_db.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../../Controllers/Get_all_song_controller.dart';
-import '../FavouriteSongsScreen/fav_but_music_playing.dart';
-import '../../MainScreens/ExploreScreen/PlaylistScreen/PlaylistScreen.dart';
+import '../../../Controllers/get_recent_song_controller.dart';
+import '../../MainScreens/libraries/FavouriteSongsScreen/fav_but_music_playing.dart';
+import '../../MainScreens/libraries/PlaylistScreen/PlaylistScreen.dart';
 import 'widgets/ArtWorkWidget.dart';
 
 class PlayScreen extends StatefulWidget {
@@ -296,6 +297,8 @@ class _PlayScreenState extends State<PlayScreen> {
                                 const Color.fromARGB(255, 20, 5, 46),
                             shape: const CircleBorder()),
                         onPressed: () async {
+                          GetRecentSongController.addRecentlyPlayed(
+                              widget.songModelList[currentIndex].id);
                           if (GetAllSongController.audioPlayer.playing) {
                             setState(() {});
                             await GetAllSongController.audioPlayer.pause();
@@ -350,16 +353,8 @@ class _PlayScreenState extends State<PlayScreen> {
                                   .setLoopMode(LoopMode.all)
                               : GetAllSongController.audioPlayer
                                   .setLoopMode(LoopMode.one);
-                          // setState(() {
-                          //   if (_isLooping) {
-                          //     GetAllSongController.audioPlayer
-                          //         .setLoopMode(LoopMode.all);
-                          //   } else {
-                          //     GetAllSongController.audioPlayer
-                          //         .setLoopMode(LoopMode.one);
-                          //   }
-                          //   _isLooping = !_isLooping;
-                          // });
+                          GetRecentSongController.addRecentlyPlayed(
+                              widget.songModelList[currentIndex].id);
                         },
                         icon: StreamBuilder<LoopMode>(
                           stream:

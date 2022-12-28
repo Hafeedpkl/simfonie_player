@@ -10,11 +10,11 @@ import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/Controllers/get_recent_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 
-import '../../../provider/song_model_provider.dart';
-import '../../MiniScreens/FavouriteSongsScreen/FavouriteMenuButton.dart';
-import '../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
-import '../ExploreScreen/PlaylistScreen/PlaylistScreen.dart';
-import '../../MiniScreens/widgets/DrawerWidget.dart';
+import '../../provider/song_model_provider.dart';
+import 'libraries/FavouriteSongsScreen/FavouriteMenuButton.dart';
+import '../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
+import 'libraries/PlaylistScreen/PlaylistScreen.dart';
+import '../MiniScreens/Drawer widgets/DrawerWidget.dart';
 
 class ListSongScreen extends StatefulWidget {
   const ListSongScreen({super.key});
@@ -172,10 +172,12 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                                     .createSongList(
                                                         items.data!),
                                                 initialIndex: index);
-                                        // GetAllSongController.audioPlayer.play();
+
                                         GetRecentSongController
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
+
+
                                         context
                                             .read<SongModelProvider>()
                                             .setId(items.data![index].id);

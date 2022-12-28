@@ -4,8 +4,7 @@ import 'package:simfonie/Controllers/get_recent_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 
 import '../../../../Controllers/Get_all_song_controller.dart';
-import '../../../MiniScreens/FavouriteSongsScreen/FavouriteMenuButton.dart';
-import '../../../MiniScreens/FavouriteSongsScreen/favoriteButton.dart';
+import '../FavouriteSongsScreen/FavouriteMenuButton.dart';
 import '../../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 
 class RecentlyPlayedWidget extends StatefulWidget {
@@ -44,7 +43,7 @@ class _RecentlyPlayedWidgetState extends State<RecentlyPlayedWidget> {
           builder:
               (BuildContext context, List<SongModel> value, Widget? child) {
             if (value.isEmpty) {
-              return Padding(
+              return const Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: Center(
                   child: Text(
@@ -65,10 +64,10 @@ class _RecentlyPlayedWidgetState extends State<RecentlyPlayedWidget> {
                 ),
                 builder: (context, items) {
                   if (items.data == null) {
-                    return Center(child: const CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                   if (items.data!.isEmpty) {
-                    return Center(
+                    return const Center(
                       child: Text(
                         'No Song Available',
                         style: TextStyle(color: Colors.white),

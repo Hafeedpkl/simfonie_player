@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:simfonie/screens/MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
-import '../../../Controllers/Get_all_song_controller.dart';
+import '../../Controllers/Get_all_song_controller.dart';
+import '../../Controllers/get_recent_song_controller.dart';
 
 class MiniPlayer extends StatefulWidget {
   const MiniPlayer({
@@ -56,8 +57,25 @@ class _MiniPlayerState extends State<MiniPlayer> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            isPlaying
-                                ? Text(
+                            StreamBuilder<bool>(
+                              stream: GetAllSongController
+                                  .audioPlayer.playingStream,
+                              builder: (context, snapshot) {
+                                bool? playingStage = snapshot.data;
+                                if (playingStage != null && playingStage) {
+                                  return TextScroll(
+                                    GetAllSongController
+                                        .playingSong[GetAllSongController
+                                            .audioPlayer.currentIndex!]
+                                        .displayNameWOExt,
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'poppins',
+                                        fontSize: 14),
+                                  );
+                                } else {
+                                  return Text(
                                     GetAllSongController
                                         .playingSong[GetAllSongController
                                             .audioPlayer.currentIndex!]
@@ -68,18 +86,10 @@ class _MiniPlayerState extends State<MiniPlayer> {
                                         color: Colors.white,
                                         fontFamily: 'poppins',
                                         fontSize: 14),
-                                  )
-                                : TextScroll(
-                                    GetAllSongController
-                                        .playingSong[GetAllSongController
-                                            .audioPlayer.currentIndex!]
-                                        .displayNameWOExt,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                        color: Colors.white,
-                                        fontFamily: 'poppins',
-                                        fontSize: 14),
-                                  ),
+                                  );
+                                }
+                              },
+                            ),
                             TextScroll(
                               GetAllSongController
                                           .playingSong[GetAllSongController
@@ -105,6 +115,11 @@ class _MiniPlayerState extends State<MiniPlayer> {
                       IconButton(
                         iconSize: 32,
                         onPressed: () async {
+                          GetRecentSongController.addRecentlyPlayed(
+                              GetAllSongController
+                                  .playingSong[GetAllSongController
+                                      .audioPlayer.currentIndex!]
+                                  .id);
                           if (GetAllSongController.audioPlayer.hasPrevious) {
                             await GetAllSongController.audioPlayer
                                 .seekToPrevious();
@@ -157,6 +172,11 @@ class _MiniPlayerState extends State<MiniPlayer> {
                       IconButton(
                         iconSize: 35,
                         onPressed: () async {
+                          GetRecentSongController.addRecentlyPlayed(
+                              GetAllSongController
+                                  .playingSong[GetAllSongController
+                                      .audioPlayer.currentIndex!]
+                                  .id);
                           if (GetAllSongController.audioPlayer.hasNext) {
                             await GetAllSongController.audioPlayer.seekToNext();
                             await GetAllSongController.audioPlayer.play();

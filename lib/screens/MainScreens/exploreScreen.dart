@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/screens/MainScreens/ExploreScreen/library_widget/libraryWidget.dart';
-import 'package:simfonie/screens/MainScreens/ExploreScreen/recently/recently_played_widget.dart';
-import '../../MiniScreens/widgets/DrawerWidget.dart';
+import 'package:simfonie/screens/MainScreens/libraries/libraryWidget.dart';
+import 'package:simfonie/screens/MainScreens/libraries/recently/recently_played_widget.dart';
+import '../MiniScreens/Drawer widgets/DrawerWidget.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});

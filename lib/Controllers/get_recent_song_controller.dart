@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
-import '../screens/MainScreens/SongListScreen/songListScreen.dart';
+import '../screens/MainScreens/songListScreen.dart';
 
 class GetRecentSongController {
   static ValueNotifier<List<SongModel>> recentSongNotifier = ValueNotifier([]);

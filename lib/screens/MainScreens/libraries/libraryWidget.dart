@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../MiniScreens/FavouriteSongsScreen/favourites.dart';
-import '../PlaylistScreen/PlaylistScreen.dart';
-import '../../../MiniScreens/Top Beats/TopBeats.dart';
+import 'FavouriteSongsScreen/favourites.dart';
+import 'PlaylistScreen/PlaylistScreen.dart';
+import 'Top Beats/TopBeats.dart';
 
 class LibraryWidget extends StatelessWidget {
   const LibraryWidget({super.key});

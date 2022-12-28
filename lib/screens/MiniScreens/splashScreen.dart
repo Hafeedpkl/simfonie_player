@@ -4,7 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:simfonie/screens/MainScreens/BottomNavScreen/BottomNavScreen.dart';
+import 'package:simfonie/screens/MainScreens/BottomNavScreen.dart';
 
 class ScreenSplash extends StatefulWidget {
   const ScreenSplash({super.key});

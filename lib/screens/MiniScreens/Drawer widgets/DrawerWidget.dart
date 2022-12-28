@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../MainScreens/SettingsScreen/AboutScreen.dart';
-import '../../MainScreens/SettingsScreen/SettingsScreen.dart';
-import '../FavouriteSongsScreen/favourites.dart';
-import '../../MainScreens/ExploreScreen/PlaylistScreen/PlaylistScreen.dart';
-import '../Top Beats/TopBeats.dart';
+import '../../MainScreens/SettingsScreens/AboutScreen.dart';
+import '../../MainScreens/SettingsScreens/SettingsScreen.dart';
+import '../../MainScreens/libraries/FavouriteSongsScreen/favourites.dart';
+import '../../MainScreens/libraries/PlaylistScreen/PlaylistScreen.dart';
+import '../../MainScreens/libraries/Top Beats/TopBeats.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({

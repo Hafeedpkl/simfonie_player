@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/screens/MainScreens/SettingsScreen/AboutScreen.dart';
-import 'package:simfonie/screens/MainScreens/SettingsScreen/TermsAndCondition.dart';
+import 'package:simfonie/screens/MainScreens/SettingsScreens/AboutScreen.dart';
+import 'package:simfonie/screens/MainScreens/SettingsScreens/TermsAndCondition.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
