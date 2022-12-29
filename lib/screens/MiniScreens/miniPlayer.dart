@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:simfonie/screens/MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
@@ -5,13 +7,14 @@ import '../../Controllers/Get_all_song_controller.dart';
 import '../../Controllers/get_recent_song_controller.dart';
 
 class MiniPlayer extends StatefulWidget {
-  const MiniPlayer({
+  MiniPlayer({
     Key? key,
   }) : super(key: key);
-
   @override
   State<MiniPlayer> createState() => _MiniPlayerState();
 }
+
+bool firstSong = false;
 
 bool isPlaying = false;
 
@@ -19,9 +22,12 @@ class _MiniPlayerState extends State<MiniPlayer> {
   void initState() {
     GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
       if (index != null && mounted) {
-        setState(() {});
+        setState(() {
+          index == 0 ? firstSong = true : firstSong = false;
+        });
       }
     });
+
     super.initState();
   }
 
@@ -112,25 +118,30 @@ class _MiniPlayerState extends State<MiniPlayer> {
                           ],
                         ),
                       ),
-                      IconButton(
-                        iconSize: 32,
-                        onPressed: () async {
-                          GetRecentSongController.addRecentlyPlayed(
-                              GetAllSongController
-                                  .playingSong[GetAllSongController
-                                      .audioPlayer.currentIndex!]
-                                  .id);
-                          if (GetAllSongController.audioPlayer.hasPrevious) {
-                            await GetAllSongController.audioPlayer
-                                .seekToPrevious();
-                            await GetAllSongController.audioPlayer.play();
-                          } else {
-                            await GetAllSongController.audioPlayer.play();
-                          }
-                        },
-                        icon: const Icon(Icons.skip_previous),
-                        color: Colors.white,
-                      ),
+                      firstSong
+                          ? SizedBox(
+                              width: 45,
+                            )
+                          : IconButton(
+                              iconSize: 32,
+                              onPressed: () async {
+                                GetRecentSongController.addRecentlyPlayed(
+                                    GetAllSongController
+                                        .playingSong[GetAllSongController
+                                            .audioPlayer.currentIndex!]
+                                        .id);
+                                if (GetAllSongController
+                                    .audioPlayer.hasPrevious) {
+                                  await GetAllSongController.audioPlayer
+                                      .seekToPrevious();
+                                  await GetAllSongController.audioPlayer.play();
+                                } else {
+                                  await GetAllSongController.audioPlayer.play();
+                                }
+                              },
+                              icon: const Icon(Icons.skip_previous),
+                              color: Colors.white,
+                            ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor:
@@ -189,7 +200,7 @@ class _MiniPlayerState extends State<MiniPlayer> {
                           size: 32,
                         ),
                         color: Colors.white,
-                      ),
+                      )
                     ]),
               ],
             ),

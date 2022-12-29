@@ -29,6 +29,7 @@ class _ListSongScreenState extends State<ListSongScreen> {
   final OnAudioQuery _audioQuery = OnAudioQuery();
   final AudioPlayer _audioPlayer = AudioPlayer();
   bool isFavourite = false;
+  bool sizedBoxSpacing = false;
   List<SongModel> allSongs = [];
 
   void playSong(String? uri) {
@@ -42,12 +43,20 @@ class _ListSongScreenState extends State<ListSongScreen> {
 
   @override
   void initState() {
+    GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
+      if (index != null && mounted) {
+        setState(() {
+          sizedBoxSpacing = true;
+        });
+      }
+    });
     super.initState();
     reqeustStoragePermission();
   }
 
   @override
   Widget build(BuildContext context) {
+    int count = 0;
     return Scaffold(
         drawer: const DrawerWidget(),
         appBar: AppBar(
@@ -172,11 +181,9 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                                     .createSongList(
                                                         items.data!),
                                                 initialIndex: index);
-
                                         GetRecentSongController
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
-
 
                                         context
                                             .read<SongModelProvider>()
@@ -186,6 +193,7 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                                 builder: (context) {
                                           return PlayScreen(
                                             songModelList: items.data!,
+                                            count: items.data!.length,
                                           );
                                         }));
                                       },
@@ -197,6 +205,11 @@ class _ListSongScreenState extends State<ListSongScreen> {
                             );
                           }))),
                 ),
+                sizedBoxSpacing
+                    ? const SizedBox(
+                        height: 70,
+                      )
+                    : const SizedBox()
               ],
             ),
           ]),

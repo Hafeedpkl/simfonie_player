@@ -42,7 +42,7 @@ class _ScreenHomeState extends State<ScreenHome> {
                           if (GetAllSongController.audioPlayer.currentIndex !=
                               null)
                             Column(
-                              children: const [
+                              children: [
                                 MiniPlayer(),
                               ],
                             )
