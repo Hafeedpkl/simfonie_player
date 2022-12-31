@@ -3,6 +3,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:provider/provider.dart';
+import 'package:simfonie/screens/MainScreens/libraries/FavouriteSongsScreen/FavouriteMenuButton.dart';
 import '../../Controllers/Get_all_song_controller.dart';
 import '../../provider/song_model_provider.dart';
 import 'libraries/FavouriteSongsScreen/favoriteButton.dart';
@@ -25,8 +26,8 @@ final audioQuery = OnAudioQuery();
 class _SearchScreenState extends State<SearchScreen> {
   @override
   void initState() {
-    super.initState();
     songsLoading();
+    super.initState();
   }
 
   void updateList(String enteredText) {
@@ -122,7 +123,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                       fontSize: 12,
                                       color: Colors.blueGrey),
                                 ),
-                                trailing: FavoriteButton(
+                                trailing: FavoriteMenuButton(
                                   songFavorite: startSong[index],
                                 ),
                                 onTap: () {

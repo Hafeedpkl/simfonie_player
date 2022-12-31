@@ -128,6 +128,8 @@ class _ListSongScreenState extends State<ListSongScreen> {
                             if (!FavoriteDb.isInitialized) {
                               FavoriteDb.initialize(items.data!);
                             }
+                            GetAllSongController.songscopy =
+                                items.data!; //don't forgot it for playlist
 
                             return ListView.builder(
                               itemBuilder: ((context, index) {
