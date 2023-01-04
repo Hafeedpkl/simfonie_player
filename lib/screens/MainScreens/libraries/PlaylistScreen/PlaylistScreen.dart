@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -21,6 +21,7 @@ TextEditingController nameController = TextEditingController();
 class _PlaylistScreenState extends State<PlaylistScreen> {
   @override
   Widget build(BuildContext context) {
+    int imageChanger = 1;
     return ValueListenableBuilder(
         valueListenable: Hive.box<SimfonieModel>('playlistDb').listenable(),
         builder: (BuildContext context, Box<SimfonieModel> musicList,
@@ -83,7 +84,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                           ));
                     },
                     child: Card(
-                      color: const Color.fromARGB(255, 18, 2, 61),
+                      color: Color.fromARGB(255, 42, 2, 61),
                       shadowColor: Colors.purpleAccent,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -122,6 +123,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                         width: double.infinity,
                         child: ListView.builder(
                           itemBuilder: ((context, index) {
+                            imageChanger = Random().nextInt(5) + 1;
+
                             final data = musicList.values.toList()[index];
                             // allSongs.addAll(items.data!);
                             return ValueListenableBuilder(
@@ -147,7 +150,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                       child: Stack(
                                         children: [
                                           Image.asset(
-                                            'assets/images/PlaylistScreen/playlist-small-playlistscreen.png',
+                                            'assets/images/PlaylistScreen/playlist-small-playlistscreen$imageChanger.png',
                                             fit: BoxFit.fill,
                                             width: double.infinity,
                                           ),
@@ -177,14 +180,19 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                                     Text(
                                                       data.name,
                                                       style: const TextStyle(
+                                                          backgroundColor:
+                                                              Color.fromARGB(
+                                                                  78, 0, 0, 0),
                                                           color: Colors.white,
                                                           fontWeight:
                                                               FontWeight.bold,
-                                                          fontSize: 20,
+                                                          fontSize: 25,
                                                           fontFamily:
                                                               'poppins'),
                                                     ),
                                                     PopupMenuButton(
+                                                      color: Color.fromARGB(
+                                                          255, 54, 1, 104),
                                                       icon: Icon(
                                                         Icons.more_vert,
                                                         color: Colors.white,
@@ -192,12 +200,26 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                                                       itemBuilder: (context) =>
                                                           [
                                                         PopupMenuItem(
-                                                            value: 1,
-                                                            child:
-                                                                Text('Edit')),
+                                                          value: 1,
+                                                          child: Text(
+                                                            'Edit',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontFamily:
+                                                                    'poppins'),
+                                                          ),
+                                                        ),
                                                         PopupMenuItem(
                                                           value: 2,
-                                                          child: Text('delete'),
+                                                          child: Text(
+                                                            'delete',
+                                                            style: TextStyle(
+                                                                color: Colors
+                                                                    .white,
+                                                                fontFamily:
+                                                                    'poppins'),
+                                                          ),
                                                         )
                                                       ],
                                                       onSelected: (value) {
@@ -492,7 +514,7 @@ Future<void> saveButtonPressed(context) async {
         backgroundColor: Colors.black,
         content: Text(
           'playlist already exist',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.redAccent),
         ));
     ScaffoldMessenger.of(context).showSnackBar(snackbar3);
     Navigator.of(context).pop();

@@ -129,7 +129,7 @@ class _ListSongScreenState extends State<ListSongScreen> {
                               FavoriteDb.initialize(items.data!);
                             }
                             GetAllSongController.songscopy =
-                                items.data!; //don't forgot it for playlist
+                                items.data!; //for playlist
 
                             return ListView.builder(
                               itemBuilder: ((context, index) {
@@ -175,7 +175,8 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                             color: Colors.blueGrey),
                                       ),
                                       trailing: FavoriteMenuButton(
-                                          songFavorite: startSong[index]),
+                                          songFavorite: startSong[index],
+                                          findex: index),
                                       onTap: () {
                                         GetAllSongController.audioPlayer
                                             .setAudioSource(

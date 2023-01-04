@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:simfonie/screens/MainScreens/SettingsScreens/AboutScreen.dart';
 import 'package:simfonie/screens/MainScreens/SettingsScreens/TermsAndCondition.dart';
+import 'package:simfonie/screens/MainScreens/SettingsScreens/privacy-policy.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -49,6 +50,19 @@ class SettingsScreen extends StatelessWidget {
                   child: ListSettings(
                     titleText: 'Terms and condition',
                     yourIcon: Icons.gavel_rounded,
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PrivacyPolicyScreen(),
+                        ));
+                  },
+                  child: ListSettings(
+                    titleText: 'Privacy policy ',
+                    yourIcon: Icons.privacy_tip_outlined,
                   ),
                 ),
                 const ListSettings(

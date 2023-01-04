@@ -83,7 +83,8 @@ flutter:
     - assets/images/top-music.png
     - assets/images/ellipse_favourite.png
     - assets/images/PlaylistScreen/playlist-small-favourite.png
-    - assets/images/PlaylistScreen/playlist-small-playlistscreen.png
+    - assets/images/PlaylistScreen/playlist-small-playlistscreen1.png
+    - assets/images/PlaylistScreen/
     - assets/lottie/68796-empty-search.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
