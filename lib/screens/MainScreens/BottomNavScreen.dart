@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
+import 'package:simfonie/Text/text_all_widget.dart';
 import 'package:simfonie/db/favourite_db.dart';
 import 'package:simfonie/screens/MainScreens/SettingsScreens/SettingsScreen.dart';
 import 'package:simfonie/screens/MainScreens/songListScreen.dart';
@@ -73,25 +74,25 @@ class _ScreenHomeState extends State<ScreenHome> {
                 gap: 8,
                 activeColor: Colors.purpleAccent,
                 backgroundColor: Color.fromARGB(255, 39, 0, 107),
-                tabs: const [
+                tabs: [
                   GButton(
                     icon: Icons.toc,
-                    text: 'list',
+                    text: TextAllWidget.gbuttonList,
                     iconColor: Colors.white,
                   ),
                   GButton(
                     icon: Icons.search,
-                    text: 'search',
+                    text: TextAllWidget.gbuttonSearch,
                     iconColor: Colors.white,
                   ),
                   GButton(
                     icon: Icons.explore_outlined,
-                    text: 'explore',
+                    text: TextAllWidget.gbuttonExplore,
                     iconColor: Colors.white,
                   ),
                   GButton(
                     icon: Icons.settings,
-                    text: 'settings',
+                    text: TextAllWidget.gbuttonSettings,
                     iconColor: Colors.white,
                   )
                 ]),

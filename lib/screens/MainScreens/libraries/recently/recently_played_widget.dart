@@ -4,7 +4,7 @@ import 'package:simfonie/Controllers/get_recent_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 
 import '../../../../Controllers/Get_all_song_controller.dart';
-import '../FavouriteSongsScreen/FavouriteMenuButton.dart';
+import '../../../MiniScreens/MenuButtonWidget/MenuButton.dart';
 import '../../../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 
 class RecentlyPlayedWidget extends StatefulWidget {

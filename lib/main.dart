@@ -15,6 +15,7 @@ Future<void> main() async {
   await Hive.openBox<int>('FavoriteDB');
   await Hive.openBox('recentSongNotifier');
   await Hive.openBox<SimfonieModel>('playlistDb');
+  await Hive.openBox('topBeatsNotifier');
 
   await JustAudioBackground.init(
     androidNotificationChannelId: 'com.ryanheise.bg_demo.channel.audio',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/Text/text_all_widget.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -7,7 +8,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About simfonie'),
+        title: Text(TextAllWidget.settingAboutSimfonie),
         backgroundColor: Color.fromARGB(255, 20, 5, 46),
       ),
       backgroundColor: const Color.fromARGB(255, 20, 5, 46),

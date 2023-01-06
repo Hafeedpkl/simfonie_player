@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/Text/text_all_widget.dart';
 import '../../MainScreens/SettingsScreens/AboutScreen.dart';
 import '../../MainScreens/SettingsScreens/SettingsScreen.dart';
 import '../../MainScreens/libraries/FavouriteSongsScreen/favourites.dart';
@@ -19,30 +20,30 @@ class DrawerWidget extends StatelessWidget {
         children: [
           DrawerList(
             icon: Icons.home,
-            name: 'Home',
+            name: TextAllWidget.drawerHome,
           ),
           DrawerList(
-            name: 'Playlists',
+            name: TextAllWidget.drawerPlaylist,
             icon: Icons.playlist_play,
             ontapped: PlaylistScreen(),
           ),
           DrawerList(
-            name: 'Favourites',
+            name: TextAllWidget.drawerFavorites,
             icon: Icons.favorite,
             ontapped: FavouriteScreen(),
           ),
           DrawerList(
-            name: 'Top Beats',
+            name: TextAllWidget.drawerTopBeats,
             icon: Icons.my_library_music_outlined,
             ontapped: TopBeatsScreen(),
           ),
           DrawerList(
-            name: 'Settings',
+            name: TextAllWidget.drawerSettings,
             icon: Icons.settings,
             ontapped: SettingsScreen(),
           ),
           DrawerList(
-            name: 'About',
+            name: TextAllWidget.drawerAbout,
             icon: Icons.info_outline,
             ontapped: AboutScreen(),
           )

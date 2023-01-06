@@ -3,7 +3,7 @@ import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:provider/provider.dart';
-import 'package:simfonie/screens/MainScreens/libraries/FavouriteSongsScreen/FavouriteMenuButton.dart';
+import 'package:simfonie/screens/MiniScreens/MenuButtonWidget/MenuButton.dart';
 import '../../Controllers/Get_all_song_controller.dart';
 import '../../provider/song_model_provider.dart';
 import 'libraries/FavouriteSongsScreen/favoriteButton.dart';

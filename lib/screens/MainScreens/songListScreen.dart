@@ -6,12 +6,13 @@ import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
+import 'package:simfonie/Controllers/Get_Top_Beats_controller.dart';
 import 'package:simfonie/Controllers/Get_all_song_controller.dart';
 import 'package:simfonie/Controllers/get_recent_song_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 
 import '../../provider/song_model_provider.dart';
-import 'libraries/FavouriteSongsScreen/FavouriteMenuButton.dart';
+import '../MiniScreens/MenuButtonWidget/MenuButton.dart';
 import '../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import 'libraries/PlaylistScreen/PlaylistScreen.dart';
 import '../MiniScreens/Drawer widgets/DrawerWidget.dart';
@@ -187,6 +188,8 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                         GetRecentSongController
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
+                                        GetTopBeatsController.addTopBeats(
+                                            items.data![index].id);
 
                                         context
                                             .read<SongModelProvider>()

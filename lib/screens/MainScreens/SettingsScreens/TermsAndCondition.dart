@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/Text/text_all_widget.dart';
 
 class TermsAndConditionScreen extends StatelessWidget {
   const TermsAndConditionScreen({super.key});
@@ -7,7 +8,7 @@ class TermsAndConditionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TERMS AND CONDITIONS'),
+        title: Text(TextAllWidget.settingTermsAndCondition),
         backgroundColor: const Color.fromARGB(255, 20, 5, 46),
       ),
       backgroundColor: const Color.fromARGB(255, 20, 5, 46),

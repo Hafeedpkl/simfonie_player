@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simfonie/Text/text_all_widget.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
   const PrivacyPolicyScreen({super.key});
@@ -8,7 +9,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Privacy Policy'),
+        title: Text(TextAllWidget.settingPrivacyPolicy),
         backgroundColor: const Color.fromARGB(255, 20, 5, 46),
       ),
       backgroundColor: const Color.fromARGB(255, 20, 5, 46),
