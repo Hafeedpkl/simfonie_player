@@ -6,6 +6,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
+import 'package:simfonie/Controllers/Get_Top_Beats_controller.dart';
 import 'package:simfonie/db/favourite_db.dart';
 import 'package:simfonie/screens/MainScreens/BottomNavScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
@@ -37,27 +38,88 @@ class _PlayScreenState extends State<PlayScreen> {
   bool _isShuffling = false;
   List<AudioSource> songList = [];
   int currentIndex = 0;
-  List<int> topBeatSongCounterList = [];
-  int topBeatsCounter = 0;
+  List<int> topBeatSongList = [];
+  int oldcounter = 0;
+  int newcounter = 0;
+  int newTopBeatSong = 0;
+  int alreadyAddedTopSong = 0;
+  int counter = 0;
+  Map topBeatSongCounterMap = {0: 0};
+  // var topBeatBox = Hive.box('TopBeatBox');
+
   @override
   void initState() {
+    // if (topBeatBox.values.isEmpty) {
+    //   topBeatBox.put('TopBeatBox', topBeatSongCounterMap);
+    // }
     GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
       if (index != null) {
+        GetAllSongController.currentIndexes = index;
         setState(() {
-          topBeatsCounter++;
-
           large = widget.count - 1; //store the last song's index number
 
           currentIndex = index;
           index == 0 ? _firstsong = true : _firstsong = false;
           index == large ? _lastSong = true : _lastSong = false;
+
+          // topBeatSongCounterList
+          //     .add(widget.songModelList[currentIndex].id.toInt());
         });
-        GetAllSongController.currentIndexes = index;
+
         log('index of last song ${widget.count}');
       }
     });
+    topBeatsDetect();
     super.initState();
     playSong();
+  }
+
+  void topBeatsDetect() {
+    GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
+      if (index != null) {
+        setState(() {
+          // topBeatSongCounterMap = topBeatBox.get('TopBeatBox');
+
+          // topBeatSongCounterMap.forEach((key, value) {
+          //   if (key != widget.songModelList[currentIndex].id) {
+          //     newTopBeatSong++;
+          //   } else {
+          //     alreadyAddedTopSong++;
+          //   }
+          // });
+          // if (newTopBeatSong >= 1) {
+          //   topBeatSongCounterMap
+          //       .addAll({widget.songModelList[currentIndex].id.toInt(): 1});
+          //   // topBeatBox.put('TopBeatBox', topBceatSongCounterMap);
+          //   print('second $topBeatSongCounterMap');
+
+          //   newcounter++;
+          // }
+          // if (alreadyAddedTopSong >= 1) {
+          //   topBeatSongCounterMap.update(
+          //     widget.songModelList[currentIndex].id,
+          //     (value) => ++value,
+          //   );
+          //   oldcounter++;
+
+          //   // topBeatBox.putAt(index, topBeatSongCounterMap.values);
+          //   GetTopBeatsController.topBeatSong.add(widget.songModelList[index]);
+          // }
+
+          // topBeatSongCounterMap.forEach((key, value) {
+          //   if (key == widget.songModelList[currentIndex].id) {
+          //     if (value >= 1) {
+          //       //   topBeatSongList = topBeatSongCounterMap.keys.toList();
+          //       //   topBeatSongList
+          //       //       .add(widget.songModelList[currentIndex].id.toInt());
+          //       GetTopBeatsController.topBeatSong
+          //           .add(widget.songModelList[index]);
+          //     }
+          //   }
+          // });
+        });
+      }
+    });
   }
 
   String _formatDuration(Duration? duration) {
@@ -336,7 +398,14 @@ class _PlayScreenState extends State<PlayScreen> {
                             GetRecentSongController.addRecentlyPlayed(
                                 widget.songModelList[currentIndex].id);
                             if (GetAllSongController.audioPlayer.playing) {
-                              setState(() {});
+                              setState(() {
+                                counter++;
+                                log('counter of top beats is $newcounter');
+                                if (counter == 2) {
+                                  GetTopBeatsController.topBeatSong
+                                      .add(widget.songModelList[currentIndex]);
+                                }
+                              });
                               await GetAllSongController.audioPlayer.pause();
                             } else {
                               await GetAllSongController.audioPlayer.play();
@@ -423,12 +492,12 @@ class _PlayScreenState extends State<PlayScreen> {
                     )
                   ],
                 ),
-                Center(
-                  child: Text(
-                    '$topBeatsCounter',
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                )
+                // Center(
+                //   child: Text(
+                //     'new: $newcounter, old: $oldcounter, id: ${widget.songModelList[currentIndex].id}',
+                //     style: const TextStyle(color: Colors.white),
+                //   ),
+                // )
               ],
             ),
           ),

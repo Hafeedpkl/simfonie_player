@@ -13,6 +13,7 @@ Future<void> main() async {
   }
   await Hive.initFlutter();
   await Hive.openBox<int>('FavoriteDB');
+  await Hive.openBox('TopBeatBox');
   await Hive.openBox('recentSongNotifier');
   await Hive.openBox<SimfonieModel>('playlistDb');
   await Hive.openBox('topBeatsNotifier');

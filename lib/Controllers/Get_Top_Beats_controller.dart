@@ -8,6 +8,7 @@ class GetTopBeatsController {
   static ValueNotifier<List<SongModel>> topBeatsNotifier = ValueNotifier([]);
   static List<dynamic> topBeats = [];
   static List<SongModel> topBeatSong = [];
+
   static Future<void> addTopBeats(item) async {
     final topBeatsDb = await Hive.openBox('topBeatsNotifier');
     await topBeatsDb.add(item);
@@ -22,7 +23,7 @@ class GetTopBeatsController {
     topBeatsNotifier.notifyListeners();
   }
 
-  static Future<void> displayTopBeats() async {
+  static Future<List> displayTopBeats() async {
     final topBeatsDb = await Hive.openBox('topBeatsNotifier');
     final topBeatsSongItems = topBeatsDb.values.toList();
     topBeatsNotifier.value.clear();
@@ -35,6 +36,6 @@ class GetTopBeatsController {
         }
       }
     }
-    topBeatsNotifier.notifyListeners();
+    return topBeats;
   }
 }

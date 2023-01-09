@@ -32,7 +32,12 @@ class _ListSongScreenState extends State<ListSongScreen> {
   bool isFavourite = false;
   bool sizedBoxSpacing = false;
   List<SongModel> allSongs = [];
-
+  int newcounter = 0;
+  int oldcounter = 0;
+  int newTopBeatSong = 0;
+  int alreadyAddedTopSong = 0;
+  int counter = 0;
+  Map topBeatSongCounterMap = {0: 0};
   void playSong(String? uri) {
     try {
       _audioPlayer.setAudioSource(AudioSource.uri(Uri.parse(uri!)));
@@ -188,8 +193,52 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                         GetRecentSongController
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
-                                        GetTopBeatsController.addTopBeats(
-                                            items.data![index].id);
+
+                                        topBeatSongCounterMap
+                                            .forEach((key, value) {
+                                          if (key != items.data![index].id) {
+                                            newTopBeatSong++;
+                                          } else {
+                                            alreadyAddedTopSong++;
+                                          }
+                                        });
+                                        if (newTopBeatSong >= 1) {
+                                          topBeatSongCounterMap.addAll({
+                                            items.data![index].id.toInt(): 1
+                                          });
+                                          // topBeatBox.put('TopBeatBox', topBceatSongCounterMap);
+                                          print(
+                                              'second $topBeatSongCounterMap');
+
+                                          newcounter++;
+                                        }
+                                        if (alreadyAddedTopSong >= 1) {
+                                          topBeatSongCounterMap.update(
+                                            items.data![index].id,
+                                            (value) => ++value,
+                                          );
+                                          oldcounter++;
+
+                                          // topBeatBox.putAt(index, topBeatSongCounterMap.values);
+                                          GetTopBeatsController.topBeatSong
+                                              .add(items.data![index]);
+                                        }
+
+                                        topBeatSongCounterMap
+                                            .forEach((key, value) {
+                                          if (key == items.data![index].id) {
+                                            if (value >= 1) {
+                                              //   topBeatSongList = topBeatSongCounterMap.keys.toList();
+                                              //   topBeatSongList
+                                              //       .add(widget.songModelList[currentIndex].id.toInt());
+                                              GetTopBeatsController.topBeatSong
+                                                  .add(items.data![index]);
+                                            }
+                                          }
+                                        });
+
+                                        // GetTopBeatsController.addTopBeats(
+                                        //     items.data![index].id);
 
                                         context
                                             .read<SongModelProvider>()
