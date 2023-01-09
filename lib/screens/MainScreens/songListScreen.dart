@@ -194,51 +194,51 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
 
-                                        topBeatSongCounterMap
-                                            .forEach((key, value) {
-                                          if (key != items.data![index].id) {
-                                            newTopBeatSong++;
-                                          } else {
-                                            alreadyAddedTopSong++;
-                                          }
-                                        });
-                                        if (newTopBeatSong >= 1) {
-                                          topBeatSongCounterMap.addAll({
-                                            items.data![index].id.toInt(): 1
-                                          });
-                                          // topBeatBox.put('TopBeatBox', topBceatSongCounterMap);
-                                          print(
-                                              'second $topBeatSongCounterMap');
+                                        // topBeatSongCounterMap
+                                        //     .forEach((key, value) {
+                                        //   if (key != items.data![index].id) {
+                                        //     newTopBeatSong++;
+                                        //   } else {
+                                        //     alreadyAddedTopSong++;
+                                        //   }
+                                        // });
+                                        // if (newTopBeatSong >= 1) {
+                                        //   topBeatSongCounterMap.addAll({
+                                        //     items.data![index].id.toInt(): 1
+                                        //   });
+                                        //   // topBeatBox.put('TopBeatBox', topBceatSongCounterMap);
+                                        //   print(
+                                        //       'second $topBeatSongCounterMap');
 
-                                          newcounter++;
-                                        }
-                                        if (alreadyAddedTopSong >= 1) {
-                                          topBeatSongCounterMap.update(
-                                            items.data![index].id,
-                                            (value) => ++value,
-                                          );
-                                          oldcounter++;
+                                        //   newcounter++;
+                                        // }
+                                        // if (alreadyAddedTopSong >= 1) {
+                                        //   topBeatSongCounterMap.update(
+                                        //     items.data![index].id,
+                                        //     (value) => ++value,
+                                        //   );
+                                        //   oldcounter++;
 
-                                          // topBeatBox.putAt(index, topBeatSongCounterMap.values);
-                                          GetTopBeatsController.topBeatSong
-                                              .add(items.data![index]);
-                                        }
+                                        //   // topBeatBox.putAt(index, topBeatSongCounterMap.values);
+                                        //   GetTopBeatsController.topBeatSong
+                                        //       .add(items.data![index]);
+                                        // }
 
-                                        topBeatSongCounterMap
-                                            .forEach((key, value) {
-                                          if (key == items.data![index].id) {
-                                            if (value >= 1) {
-                                              //   topBeatSongList = topBeatSongCounterMap.keys.toList();
-                                              //   topBeatSongList
-                                              //       .add(widget.songModelList[currentIndex].id.toInt());
-                                              GetTopBeatsController.topBeatSong
-                                                  .add(items.data![index]);
-                                            }
-                                          }
-                                        });
+                                        // topBeatSongCounterMap
+                                        //     .forEach((key, value) {
+                                        //   if (key == items.data![index].id) {
+                                        //     if (value >= 1) {
+                                        //       //   topBeatSongList = topBeatSongCounterMap.keys.toList();
+                                        //       //   topBeatSongList
+                                        //       //       .add(widget.songModelList[currentIndex].id.toInt());
+                                        //       GetTopBeatsController.topBeatSong
+                                        //           .add(items.data![index]);
+                                        //     }
+                                        //   }
+                                        // });
 
-                                        // GetTopBeatsController.addTopBeats(
-                                        //     items.data![index].id);
+                                        GetTopBeatsController.addTopBeats(
+                                            items.data![index].id);
 
                                         context
                                             .read<SongModelProvider>()

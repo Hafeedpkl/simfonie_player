@@ -17,6 +17,10 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
   final OnAudioQuery _audioQuery = OnAudioQuery();
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_typing_uninitialized_variables
+    var filteredList;
+
+    int duplicateCounter = 0;
     List<SongModel> topBeatsList = [];
     return Scaffold(
         backgroundColor: const Color.fromARGB(255, 20, 5, 46),
@@ -108,9 +112,26 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                                                 ),
                                               ));
                                             }
-                                            final temp = value.toList();
-                                            topBeatsList =
-                                                temp.toSet().toList();
+                                            
+                                            for (var i = 0;
+                                                i < value.length;
+                                                i++) {
+                                              duplicateCounter = 0;
+                                              for (var j = i + 1;
+                                                  j < value.length;
+                                                  j++) {
+                                                if (value[i] == value[j]) {
+                                                  duplicateCounter++;
+                                                }
+                                                if (duplicateCounter >= 2) {
+                                                  filteredList =
+                                                      value.toSet().toList();
+                                                }
+                                              }
+                                            }
+                                            if (filteredList != null) {
+                                              topBeatsList = filteredList;
+                                            }
                                             return ListView.builder(
                                               itemBuilder: ((context, index) {
                                                 // allSongs.addAll(items.data!);
