@@ -45,13 +45,9 @@ class _PlayScreenState extends State<PlayScreen> {
   int alreadyAddedTopSong = 0;
   int counter = 0;
   Map topBeatSongCounterMap = {0: 0};
-  // var topBeatBox = Hive.box('TopBeatBox');
 
   @override
   void initState() {
-    // if (topBeatBox.values.isEmpty) {
-    //   topBeatBox.put('TopBeatBox', topBeatSongCounterMap);
-    // }
     GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
       if (index != null) {
         GetAllSongController.currentIndexes = index;
@@ -61,65 +57,13 @@ class _PlayScreenState extends State<PlayScreen> {
           currentIndex = index;
           index == 0 ? _firstsong = true : _firstsong = false;
           index == large ? _lastSong = true : _lastSong = false;
-
-          // topBeatSongCounterList
-          //     .add(widget.songModelList[currentIndex].id.toInt());
         });
-
+        GetTopBeatsController.addTopBeats(widget.songModelList[index].id);
         log('index of last song ${widget.count}');
       }
     });
-    topBeatsDetect();
     super.initState();
     playSong();
-  }
-
-  void topBeatsDetect() {
-    GetAllSongController.audioPlayer.currentIndexStream.listen((index) {
-      if (index != null) {
-        setState(() {
-          // topBeatSongCounterMap = topBeatBox.get('TopBeatBox');
-
-          // topBeatSongCounterMap.forEach((key, value) {
-          //   if (key != widget.songModelList[currentIndex].id) {
-          //     newTopBeatSong++;
-          //   } else {
-          //     alreadyAddedTopSong++;
-          //   }
-          // });
-          // if (newTopBeatSong >= 1) {
-          //   topBeatSongCounterMap
-          //       .addAll({widget.songModelList[currentIndex].id.toInt(): 1});
-          //   // topBeatBox.put('TopBeatBox', topBceatSongCounterMap);
-          //   print('second $topBeatSongCounterMap');
-
-          //   newcounter++;
-          // }
-          // if (alreadyAddedTopSong >= 1) {
-          //   topBeatSongCounterMap.update(
-          //     widget.songModelList[currentIndex].id,
-          //     (value) => ++value,
-          //   );
-          //   oldcounter++;
-
-          //   // topBeatBox.putAt(index, topBeatSongCounterMap.values);
-          //   GetTopBeatsController.topBeatSong.add(widget.songModelList[index]);
-          // }
-
-          // topBeatSongCounterMap.forEach((key, value) {
-          //   if (key == widget.songModelList[currentIndex].id) {
-          //     if (value >= 1) {
-          //       //   topBeatSongList = topBeatSongCounterMap.keys.toList();
-          //       //   topBeatSongList
-          //       //       .add(widget.songModelList[currentIndex].id.toInt());
-          //       GetTopBeatsController.topBeatSong
-          //           .add(widget.songModelList[index]);
-          //     }
-          //   }
-          // });
-        });
-      }
-    });
   }
 
   String _formatDuration(Duration? duration) {

@@ -112,7 +112,7 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                                                 ),
                                               ));
                                             }
-                                            
+
                                             for (var i = 0;
                                                 i < value.length;
                                                 i++) {
@@ -123,12 +123,13 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                                                 if (value[i] == value[j]) {
                                                   duplicateCounter++;
                                                 }
-                                                if (duplicateCounter >= 2) {
+                                                if (duplicateCounter > 5) {
                                                   filteredList =
                                                       value.toSet().toList();
                                                 }
                                               }
                                             }
+
                                             if (filteredList != null) {
                                               topBeatsList = filteredList;
                                             }
