@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:simfonie/screens/MiniScreens/MenuButtonWidget/MenuButton.dart';
 import '../../Controllers/Get_all_song_controller.dart';
 import '../../provider/song_model_provider.dart';
-import 'libraries/FavouriteSongsScreen/favoriteButton.dart';
 import '../MiniScreens/NowPlayingScreen/NowPlayingScreen.dart';
 import 'songListScreen.dart';
 
