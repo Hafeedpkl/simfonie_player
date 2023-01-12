@@ -58,7 +58,7 @@ class _PlayScreenState extends State<PlayScreen> {
           index == 0 ? _firstsong = true : _firstsong = false;
           index == large ? _lastSong = true : _lastSong = false;
         });
-        GetTopBeatsController.addTopBeats(widget.songModelList[index].id);
+        // GetTopBeatsController.addTopBeats(widget.songModelList[index].id);
         log('index of last song ${widget.count}');
       }
     });

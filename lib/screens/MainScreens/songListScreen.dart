@@ -194,8 +194,8 @@ class _ListSongScreenState extends State<ListSongScreen> {
                                             .addRecentlyPlayed(
                                                 items.data![index].id);
 
-                                        // GetTopBeatsController.addTopBeats(
-                                        //     items.data![index].id);
+                                        GetTopBeatsController.addTopBeats(
+                                            items.data![index].id);
 
                                         context
                                             .read<SongModelProvider>()
