@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
@@ -35,6 +37,7 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
+                          log('hello');
                           Navigator.pop(context);
                         },
                         icon: const Icon(
