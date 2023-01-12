@@ -37,7 +37,7 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          log('hello');
+                          log('hi');
                           Navigator.pop(context);
                         },
                         icon: const Icon(
