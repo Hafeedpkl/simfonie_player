@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:just_audio_background/just_audio_background.dart';
 import 'package:provider/provider.dart';
-import 'package:simfonie/model/simfonie_model.dart';
-import 'package:simfonie/provider/song_model_provider.dart';
-import 'package:simfonie/screens/MiniScreens/splashScreen.dart';
+import 'package:simfonie/model/model/simfonie_model.dart';
+import 'package:simfonie/view/music_playing/provider/song_model_provider.dart';
+import 'package:simfonie/view/splash_screen/splashScreen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
