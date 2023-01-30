@@ -3,27 +3,18 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:simfonie/view/bottom_navigation/BottomNavScreen.dart';
+import 'package:simfonie/view/splash_screen/controller/splash_controller.dart';
 
-class ScreenSplash extends StatefulWidget {
-  const ScreenSplash({super.key});
+class ScreenSplash extends StatelessWidget {
+  SplashController splashController = Get.put(SplashController());
+  ScreenSplash({super.key});
 
   @override
-  State<ScreenSplash> createState() => _ScreenSplashState();
-}
-
-class _ScreenSplashState extends State<ScreenSplash> {
-  @override
-  void initState() {
-    super.initState();
-    Timer(
-        Duration(seconds: 7),
-        (() => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: ((context) => ScreenHome())))));
-  }
-
   Widget build(BuildContext context) {
+    splashController.gotoBottomNavigation(context);
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 17, 5, 39),
         body: SafeArea(

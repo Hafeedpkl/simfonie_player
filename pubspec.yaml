@@ -42,6 +42,7 @@ dependencies:
   permission_handler: ^10.2.0
   provider: ^6.0.4
   text_scroll: ^0.1.1
+  get: ^4.6.5
 on_audio_query: ^2.5.3
 
 dev_dependencies:
