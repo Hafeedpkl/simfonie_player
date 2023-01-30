@@ -8,7 +8,7 @@ import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/controllers/Get_Top_Beats_controller.dart';
 import 'package:simfonie/model/functions/favourite_db.dart';
-import 'package:simfonie/view/bottom_navigation/BottomNavScreen.dart';
+import 'package:simfonie/view/bottom_navigation/view/BottomNavScreen.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../controllers/Get_all_song_controller.dart';
 import '../../controllers/get_recent_song_controller.dart';
@@ -116,7 +116,7 @@ class _PlayScreenState extends State<PlayScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const ScreenHome(),
+                                    builder: (context) => ScreenHome(),
                                   ));
                               FavoriteDb.favoriteSongs.notifyListeners();
                             },

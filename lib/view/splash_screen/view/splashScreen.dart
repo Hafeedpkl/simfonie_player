@@ -5,7 +5,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:simfonie/view/bottom_navigation/BottomNavScreen.dart';
+import 'package:simfonie/view/bottom_navigation/view/BottomNavScreen.dart';
 import 'package:simfonie/view/splash_screen/controller/splash_controller.dart';
 
 class ScreenSplash extends StatelessWidget {
