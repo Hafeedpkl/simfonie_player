@@ -8,7 +8,7 @@ import 'package:simfonie/view/bottom_navigation/controller/bottom_nav_controller
 import 'package:simfonie/view/widgets/Text/text_all_widget.dart';
 import 'package:simfonie/model/functions/favourite_db.dart';
 import 'package:simfonie/view/settings/SettingsScreen.dart';
-import 'package:simfonie/view/home/songListScreen.dart';
+import 'package:simfonie/view/home/view/songListScreen.dart';
 import 'package:simfonie/view/explore/view/exploreScreen.dart';
 import 'package:simfonie/view/search/view/search.dart';
 import 'package:simfonie/view/widgets/miniplayer/miniPlayer.dart';

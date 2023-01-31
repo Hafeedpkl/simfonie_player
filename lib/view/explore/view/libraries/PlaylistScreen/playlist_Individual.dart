@@ -8,7 +8,7 @@ import 'package:simfonie/view/explore/view/libraries/PlaylistScreen/playlist_add
 
 import '../../../../../controllers/get_recent_song_controller.dart';
 import '../../../../music_playing/provider/song_model_provider.dart';
-import '../../../../music_playing/NowPlayingScreen.dart';
+import '../../../../music_playing/view/music_playing.dart';
 
 class PlaylistSingle extends StatefulWidget {
   final SimfonieModel playlist;

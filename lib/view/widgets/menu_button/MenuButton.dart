@@ -3,7 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:lottie/lottie.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/model/functions/favourite_db.dart';
-import 'package:simfonie/view/home/songListScreen.dart';
+import 'package:simfonie/view/home/view/songListScreen.dart';
 
 import '../../../model/functions/playlistDb.dart';
 import '../../../model/model/simfonie_model.dart';

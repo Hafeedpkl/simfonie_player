@@ -9,17 +9,9 @@ import 'package:simfonie/view/explore/view/libraries/PlaylistScreen/playlist_Ind
 
 import '../FavouriteSongsScreen/favourites.dart';
 
-class PlaylistScreen extends StatefulWidget {
+class PlaylistScreen extends StatelessWidget {
   const PlaylistScreen({super.key});
 
-  @override
-  State<PlaylistScreen> createState() => _PlaylistScreenState();
-}
-
-final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-TextEditingController nameController = TextEditingController();
-
-class _PlaylistScreenState extends State<PlaylistScreen> {
   @override
   Widget build(BuildContext context) {
     int imageChanger = 1;
@@ -268,6 +260,9 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
   }
 }
 
+final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+TextEditingController nameController = TextEditingController();
+
 Future<dynamic> EditPlaylistName(
     BuildContext context, SimfonieModel data, int index) {
   return showDialog(
@@ -294,6 +289,7 @@ Future<dynamic> EditPlaylistName(
           child: Form(
             key: _formKey,
             child: TextFormField(
+              initialValue: data.name,
               textAlign: TextAlign.center,
               controller: nameController,
               maxLength: 15,

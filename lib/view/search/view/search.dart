@@ -7,8 +7,8 @@ import 'package:simfonie/view/search/controller/search_controller.dart';
 import 'package:simfonie/view/widgets/menu_button/MenuButton.dart';
 import '../../../controllers/Get_all_song_controller.dart';
 import '../../music_playing/provider/song_model_provider.dart';
-import '../../music_playing/NowPlayingScreen.dart';
-import '../../home/songListScreen.dart';
+import '../../music_playing/view/music_playing.dart';
+import '../../home/view/songListScreen.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchController searchController = Get.put(SearchController());

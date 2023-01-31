@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:simfonie/view/music_playing/NowPlayingScreen.dart';
+import 'package:simfonie/view/music_playing/view/music_playing.dart';
 import 'package:text_scroll/text_scroll.dart';
 import '../../../controllers/Get_all_song_controller.dart';
 import '../../../controllers/get_recent_song_controller.dart';

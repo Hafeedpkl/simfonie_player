@@ -4,7 +4,7 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/controllers/Get_Top_Beats_controller.dart';
 import 'package:simfonie/controllers/Get_all_song_controller.dart';
 import 'package:simfonie/view/widgets/menu_button/MenuButton.dart';
-import 'package:simfonie/view/music_playing/NowPlayingScreen.dart';
+import 'package:simfonie/view/music_playing/view/music_playing.dart';
 
 class TopBeatsScreen extends StatefulWidget {
   const TopBeatsScreen({super.key});
