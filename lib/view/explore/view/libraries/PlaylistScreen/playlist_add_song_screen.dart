@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/model/functions/playlistDb.dart';
 import 'package:simfonie/model/model/simfonie_model.dart';
-import 'package:simfonie/view/search/searchSongsScreen.dart';
+import 'package:simfonie/view/search/view/search.dart';
 
 class SongListAddPage extends StatefulWidget {
   const SongListAddPage({super.key, required this.playlist});
@@ -10,6 +10,8 @@ class SongListAddPage extends StatefulWidget {
   @override
   State<SongListAddPage> createState() => _SongListPageState();
 }
+
+final audioQuery = OnAudioQuery();
 
 class _SongListPageState extends State<SongListAddPage> {
   @override
