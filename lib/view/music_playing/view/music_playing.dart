@@ -210,8 +210,8 @@ class _PlayScreenState extends State<PlayScreen> {
                                         .duration.inSeconds
                                         .toDouble(),
                                     onChanged: (value) {
-                                      musicPlayingController.ChangeToSeconds(
-                                          value.toInt());
+                                      musicPlayingController
+                                          .changeToSeconds(value.toInt());
                                       value = value;
                                     },
                                   ),
@@ -387,12 +387,6 @@ class _PlayScreenState extends State<PlayScreen> {
                     ],
                   );
                 }),
-                // Center(
-                //   child: Text(
-                //     'new: $newcounter, old: $oldcounter, id: ${widget.songModelList[currentIndex].id}',
-                //     style: const TextStyle(color: Colors.white),
-                //   ),
-                // )
               ],
             ),
           ),

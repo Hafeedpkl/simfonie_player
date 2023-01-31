@@ -51,7 +51,7 @@ class MusicPlayingController extends GetxController {
     });
   }
 
-  void ChangeToSeconds(int seconds) {
+  void changeToSeconds(int seconds) {
     Duration duration = Duration(seconds: seconds);
     GetAllSongController.audioPlayer.seek(duration);
   }
