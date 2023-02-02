@@ -4,11 +4,11 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:provider/provider.dart';
 import 'package:simfonie/controllers/Get_all_song_controller.dart';
 import 'package:simfonie/model/model/simfonie_model.dart';
-import 'package:simfonie/view/explore/view/libraries/PlaylistScreen/playlist_add_song_screen.dart';
+import 'package:simfonie/view/explore/libraries/PlaylistScreen/playlist_add_song_screen.dart';
 
-import '../../../../../controllers/get_recent_song_controller.dart';
-import '../../../../music_playing/provider/song_model_provider.dart';
-import '../../../../music_playing/view/music_playing.dart';
+import '../../../../controllers/get_recent_song_controller.dart';
+import '../../../music_playing/provider/song_model_provider.dart';
+import '../../../music_playing/view/music_playing.dart';
 
 class PlaylistSingle extends StatefulWidget {
   final SimfonieModel playlist;

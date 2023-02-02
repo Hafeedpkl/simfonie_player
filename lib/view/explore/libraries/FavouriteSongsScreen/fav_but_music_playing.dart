@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:on_audio_query/on_audio_query.dart';
 
-import '../../../../../model/functions/favourite_db.dart';
+import '../../../../model/functions/favourite_db.dart';
 
 class FavButMusicPlaying extends StatefulWidget {
   const FavButMusicPlaying({super.key, required this.songFavoriteMusicPlaying});

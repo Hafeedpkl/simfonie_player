@@ -3,9 +3,9 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:simfonie/controllers/get_recent_song_controller.dart';
 import 'package:simfonie/model/functions/favourite_db.dart';
 
-import '../../../../../controllers/Get_all_song_controller.dart';
-import '../../../../widgets/menu_button/MenuButton.dart';
-import '../../../../music_playing/view/music_playing.dart';
+import '../../../../controllers/Get_all_song_controller.dart';
+import '../../../widgets/menu_button/MenuButton.dart';
+import '../../../music_playing/view/music_playing.dart';
 
 class RecentlyPlayedWidget extends StatefulWidget {
   const RecentlyPlayedWidget({

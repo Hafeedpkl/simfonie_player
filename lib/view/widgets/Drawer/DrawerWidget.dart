@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:simfonie/view/widgets/Text/text_all_widget.dart';
 import '../../settings/AboutScreen.dart';
 import '../../settings/SettingsScreen.dart';
-import '../../explore/view/libraries/FavouriteSongsScreen/favourites.dart';
-import '../../explore/view/libraries/PlaylistScreen/PlaylistScreen.dart';
-import '../../explore/view/libraries/Top Beats/TopBeats.dart';
+import '../../explore/libraries/FavouriteSongsScreen/favourites.dart';
+import '../../explore/libraries/PlaylistScreen/PlaylistScreen.dart';
+import '../../explore/libraries/Top Beats/TopBeats.dart';
 
 class DrawerWidget extends StatelessWidget {
   const DrawerWidget({

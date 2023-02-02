@@ -26,7 +26,7 @@ class SearchController extends GetxController {
       results = allsongs
           .where((element) => element.displayNameWOExt
               .toLowerCase()
-              .contains(enteredText.toLowerCase()))
+              .contains(enteredText.toLowerCase().trim()))
           .toList();
     }
 

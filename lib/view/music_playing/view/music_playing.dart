@@ -17,8 +17,8 @@ import '../../../controllers/Get_all_song_controller.dart';
 import '../../../controllers/get_recent_song_controller.dart';
 import '../../../model/functions/playlistDb.dart';
 import '../../../model/model/simfonie_model.dart';
-import '../../explore/view/libraries/FavouriteSongsScreen/fav_but_music_playing.dart';
-import '../../explore/view/libraries/PlaylistScreen/PlaylistScreen.dart';
+import '../../explore/libraries/FavouriteSongsScreen/fav_but_music_playing.dart';
+import '../../explore/libraries/PlaylistScreen/PlaylistScreen.dart';
 import 'widgets/ArtWorkWidget.dart';
 
 class PlayScreen extends StatefulWidget {

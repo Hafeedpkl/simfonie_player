@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:simfonie/view/explore/view/libraries/libraryWidget.dart';
-import 'package:simfonie/view/explore/view/libraries/recently/recently_played_widget.dart';
+import 'package:simfonie/view/explore/libraries/libraryWidget.dart';
+import 'package:simfonie/view/explore/libraries/recently/recently_played_widget.dart';
 import '../../widgets/Drawer/DrawerWidget.dart';
 
 class ExploreScreen extends StatelessWidget {

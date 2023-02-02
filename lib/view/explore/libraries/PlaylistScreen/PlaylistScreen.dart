@@ -5,7 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:lottie/lottie.dart';
 import 'package:simfonie/model/functions/playlistDb.dart';
 import 'package:simfonie/model/model/simfonie_model.dart';
-import 'package:simfonie/view/explore/view/libraries/PlaylistScreen/playlist_Individual.dart';
+import 'package:simfonie/view/explore/libraries/PlaylistScreen/playlist_Individual.dart';
 
 import '../FavouriteSongsScreen/favourites.dart';
 
@@ -265,6 +265,7 @@ TextEditingController nameController = TextEditingController();
 
 Future<dynamic> EditPlaylistName(
     BuildContext context, SimfonieModel data, int index) {
+  nameController = TextEditingController(text: data.name);
   return showDialog(
     context: context,
     builder: (ctx) => SimpleDialog(
@@ -289,7 +290,6 @@ Future<dynamic> EditPlaylistName(
           child: Form(
             key: _formKey,
             child: TextFormField(
-              initialValue: data.name,
               textAlign: TextAlign.center,
               controller: nameController,
               maxLength: 15,

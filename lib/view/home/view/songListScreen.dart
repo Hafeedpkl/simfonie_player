@@ -15,7 +15,7 @@ import 'package:simfonie/view/home/controller/home_controller.dart';
 import '../../music_playing/provider/song_model_provider.dart';
 import '../../widgets/menu_button/MenuButton.dart';
 import '../../music_playing/view/music_playing.dart';
-import '../../explore/view/libraries/PlaylistScreen/PlaylistScreen.dart';
+import '../../explore/libraries/PlaylistScreen/PlaylistScreen.dart';
 import '../../widgets/Drawer/DrawerWidget.dart';
 
 class ListSongScreen extends StatelessWidget {
