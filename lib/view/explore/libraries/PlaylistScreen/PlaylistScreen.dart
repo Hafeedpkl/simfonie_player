@@ -294,8 +294,8 @@ Future<dynamic> EditPlaylistName(
               controller: nameController,
               maxLength: 15,
               decoration: InputDecoration(
-                  counterStyle:
-                      TextStyle(color: Colors.white, fontFamily: 'poppins'),
+                  counterStyle: const TextStyle(
+                      color: Colors.white, fontFamily: 'poppins'),
                   fillColor: Colors.white.withOpacity(0.7),
                   filled: true,
                   border: OutlineInputBorder(
