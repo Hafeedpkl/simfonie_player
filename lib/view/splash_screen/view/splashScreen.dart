@@ -15,14 +15,23 @@ class ScreenSplash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     splashController.gotoBottomNavigation(context);
+    final size = MediaQuery.of(context).size;
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 17, 5, 39),
         body: SafeArea(
           child: Stack(children: [
+            Positioned(
+              bottom: 0,
+              child: Image.asset(
+                'assets/images/splashScreen_images/grouped_image.png',
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.bottomCenter,
+              ),
+            ),
             Column(
               children: [
                 SizedBox(
-                  height: 180,
+                  height: size.width * 0.6,
                   width: double.infinity,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -35,34 +44,22 @@ class ScreenSplash extends StatelessWidget {
                         )
                       ]),
                 ),
-              ],
-            ),
-            Positioned(
-              bottom: 0,
-              child: Image.asset(
-                'assets/images/splashScreen_images/grouped_image.png',
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.bottomCenter,
-              ),
-            ),
-            Positioned(
-                top: 200,
-                left: 100,
-                right: 100,
-                child: Stack(
+                Stack(
                   children: [
-                    const Positioned(
-                      top: 40,
-                      left: 40,
+                    Positioned(
+                      left: size.width * 0.1,
+                      top: size.width * 0.11,
                       child: CircleAvatar(
                         backgroundColor: Colors.white,
-                        radius: 58,
+                        radius: size.width * 0.15,
                       ),
                     ),
                     Lottie.asset('assets/lottie/real-splash-animation.json',
                         height: 200),
                   ],
-                ))
+                )
+              ],
+            ),
           ]),
         ));
   }

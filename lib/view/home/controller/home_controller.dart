@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:on_audio_query/on_audio_query.dart';
@@ -26,12 +27,12 @@ class HomeController extends GetxController {
   }
 
   Future<void> reqeustStoragePermission() async {
-    // if (!kIsWeb) {
-    //   bool PermissionStatus = await _audioQuery.permissionsRequest();
-    //   if (!PermissionStatus) {
-    //     await _audioQuery.permissionsRequest();
-    //   }
-    // }
+    if (!kIsWeb) {
+      bool PermissionStatus = await _audioQuery.permissionsRequest();
+      if (!PermissionStatus) {
+        await _audioQuery.permissionsRequest();
+      }
+    }
     Permission.storage.request();
     update();
   }

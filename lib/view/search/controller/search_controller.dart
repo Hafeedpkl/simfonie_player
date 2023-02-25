@@ -5,6 +5,11 @@ class SearchController extends GetxController {
   late List<SongModel> allsongs;
   List<SongModel> foundSongs = [];
   final audioQuery = OnAudioQuery();
+  @override
+  void onInit() {
+    songsLoading();
+    super.onInit();
+  }
 
   void songsLoading() async {
     allsongs = await audioQuery.querySongs(

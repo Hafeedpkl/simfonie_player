@@ -26,6 +26,7 @@ class MusicPlayingController extends GetxController {
     });
     super.onInit();
     playSong();
+    update();
   }
 
   String formatDuration(Duration? duration) {

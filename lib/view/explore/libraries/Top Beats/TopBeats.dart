@@ -112,27 +112,28 @@ class _TopBeatsScreenState extends State<TopBeatsScreen> {
                                                 ),
                                               ));
                                             }
+                                            topBeatsList =
+                                                value.reversed.toSet().toList();
+                                            // for (var i = 0;
+                                            //     i < value.length;
+                                            //     i++) {
+                                            //   duplicateCounter = 0;
+                                            //   for (var j = i + 1;
+                                            //       j < value.length;
+                                            //       j++) {
+                                            //     if (value[i] == value[j]) {
+                                            //       duplicateCounter++;
+                                            //     }
+                                            //     if (duplicateCounter > 5) {
+                                            //       filteredList =
+                                            //           value.toList();
+                                            //     }
+                                            //   }
+                                            // }
 
-                                            for (var i = 0;
-                                                i < value.length;
-                                                i++) {
-                                              duplicateCounter = 0;
-                                              for (var j = i + 1;
-                                                  j < value.length;
-                                                  j++) {
-                                                if (value[i] == value[j]) {
-                                                  duplicateCounter++;
-                                                }
-                                                if (duplicateCounter > 5) {
-                                                  filteredList =
-                                                      value.toSet().toList();
-                                                }
-                                              }
-                                            }
-
-                                            if (filteredList != null) {
-                                              topBeatsList = filteredList;
-                                            }
+                                            // if (filteredList != null) {
+                                            //   topBeatsList = filteredList;
+                                            // }
                                             return ListView.builder(
                                               itemBuilder: ((context, index) {
                                                 // allSongs.addAll(items.data!);

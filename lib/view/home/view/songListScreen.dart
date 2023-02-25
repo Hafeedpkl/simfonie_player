@@ -10,6 +10,7 @@ import 'package:simfonie/controllers/Get_Top_Beats_controller.dart';
 import 'package:simfonie/controllers/Get_all_song_controller.dart';
 import 'package:simfonie/controllers/get_recent_song_controller.dart';
 import 'package:simfonie/model/functions/favourite_db.dart';
+import 'package:simfonie/view/bottom_navigation/view/BottomNavScreen.dart';
 import 'package:simfonie/view/home/controller/home_controller.dart';
 
 import '../../music_playing/provider/song_model_provider.dart';

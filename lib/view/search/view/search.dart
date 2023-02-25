@@ -21,7 +21,7 @@ class SearchScreen extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 20, 5, 46),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(3),
             child:
                 Center(child: GetBuilder<SearchController>(builder: (context) {
               return Column(
